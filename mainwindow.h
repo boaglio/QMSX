@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
+#include <QtCore/QProcess>
+
+class QTreeWidgetItem;
 
 namespace Ui {
 class MainWindow;
@@ -16,7 +19,16 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    void populateGamesTreeWidget();
+
+private slots:
+      void on_runButton_clicked();
+
+      void on_gamesTreeWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
+
+
+private:
+      Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
