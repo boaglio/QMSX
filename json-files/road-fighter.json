@@ -1,0 +1,8 @@
+{
+    "name" : "Road Fighter",
+    "arch" : "MSX1",
+    "remote" : "http://gameutopia.free.fr/emulation/MSX/Road%20Fighter%20(1985)%20(Konami)%20(J).rom",
+    "local" : "games-msx1/Road.Fighter/",
+    "game" : "RoadFighter.rom",
+    "thumbnail" : "Road_Fighter_-_1985_-_Konami.jpg"
+} 

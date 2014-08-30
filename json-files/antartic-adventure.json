@@ -1,0 +1,8 @@
+{
+    "name" : "Antartic Adventure",
+    "arch" : "MSX1",
+    "source" : "http://gameutopia.free.fr/emulation/MSX/Antarctic%20Adventure%20(1984)%20(Konami)%20(J).rom",
+    "local" : "games-msx1/Antarctic.Adventure/",
+    "game" : "AntarcticAdventure.rom",
+    "thumbnail" : "penguinadventure_2.png"
+} 

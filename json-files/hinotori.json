@@ -1,0 +1,8 @@
+{
+    "name" : "Hinotori",
+    "arch" : "MSX2",
+    "remote" : "http://gameutopia.free.fr/emulation/MSX%202/Hinotori%20(1987)%20(Konami)%20(J)%20%5ba1%5d.mx2",
+    "local" : "games-msx2/Hinotori/",
+    "game" : "Hinotori.rom",
+    "thumbnail" : "HinoTori2.png"
+} 
