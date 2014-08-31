@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>QMSX - openMSX gaming device</string>
+   <string>QMSX beta - openMSX gaming device</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color:white;</string>
@@ -37,32 +37,6 @@
       </item>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="runButton">
-      <property name="font">
-       <font>
-        <family>Verdana</family>
-        <pointsize>27</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Run !</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="gameLabel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -83,7 +57,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="QMSX.qrc">:/resources/qmsx-logo.png</pixmap>
+         <pixmap resource="resources.qrc">:/resources/qmsx-logo.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>false</bool>
@@ -91,6 +65,32 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QPushButton" name="runButton">
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>27</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Run !</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" rowspan="2">
+     <widget class="QLabel" name="gameLabel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -100,14 +100,16 @@
      <x>0</x>
      <y>0</y>
      <width>928</width>
-     <height>34</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSobre">
     <property name="title">
      <string>Abo&amp;ut</string>
     </property>
-    <addaction name="action_About"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
@@ -121,6 +123,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionQuit"/>
+   <addaction name="actionAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionQuit">
@@ -136,7 +139,10 @@
     <string>Bye bye!</string>
    </property>
   </action>
-  <action name="action_About">
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset theme="help-about"/>
+   </property>
    <property name="text">
     <string>&amp;About</string>
    </property>
@@ -144,10 +150,15 @@
     <string>About !</string>
    </property>
   </action>
+  <action name="actionAboutQt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="QMSX.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -18,14 +18,15 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+
 private:
     void populateGamesTreeWidget();
 
+
 private slots:
+      void about();
       void on_runButton_clicked();
-
       void on_gamesTreeWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
-
 
 private:
       Ui::MainWindow *ui;

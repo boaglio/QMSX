@@ -5,6 +5,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
+#include <QtWidgets>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,6 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     populateGamesTreeWidget();
+
+    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(about()));
+
+    connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
 }
 
 MainWindow::~MainWindow()
@@ -23,7 +29,7 @@ void MainWindow::populateGamesTreeWidget()
 {
     QDir jsonDir(QDir::currentPath());
     qDebug() << " diretorio de arquivos JSON: ";
-    qDebug() << jsonDir;
+    qDebug() << jsonDir.absolutePath();
     jsonDir.cd("json-files");
     foreach(const QString &json, jsonDir.entryList(QStringList() << "*.json")) {
         QFile jsonFile(jsonDir.absoluteFilePath(json));
@@ -40,6 +46,14 @@ void MainWindow::populateGamesTreeWidget()
         gameItem->setData(0, Qt::UserRole, QVariant::fromValue(jsonObject));
     }
 }
+
+void MainWindow::about()
+{
+   QMessageBox::about(this, tr("About QMSX"),
+            tr("<br><b>QMSX</b> is a graphic user interface game launcher for <a href='http://www.openmsx.org'>openMSX</a>.<br><br><b>openMSX</b> is the best emulator for the MSX 8-bit computer.<br><br><b>QMSX</b> is also <a href='https://github.com/boaglio/QMSX'>an Open Source project</a>!   \\o/  "));
+}
+
+
 
 void MainWindow::on_runButton_clicked()
 {
