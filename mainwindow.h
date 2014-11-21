@@ -19,11 +19,16 @@ public:
     ~MainWindow();
 
 
-private:
+private: 
+    void closeEvent (QCloseEvent *event);
+    void writeSettings();
+    void readSettings();
     void populateGamesTreeWidget();
+    void checkOpenMSXInfo();
 
 
 private slots:
+
       void about();
       void on_runButton_clicked();
       void on_gamesTreeWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
